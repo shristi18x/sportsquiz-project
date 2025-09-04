@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>F1 Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e4f719, #f5eeee ,#ff1c1c); /* Ferrari red-black vibe */
+            color: #000000;
+            padding: 20px;
+        }
+
+         h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            background-color: rgba(0,0,0,0.5);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .question p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+            font-weight: bold;
+        }
+        /* ==== Modal Styling ==== */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 98%;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: #eae9e9;
+  margin: auto;
+  padding: 20px;
+  border-radius: 14px;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease-out;
+  position: relative;
+  border-top: 6px solid #28a745; /* 🏏 Cricket green stripe */
+}
+
+
+/* Close button */
+.close-btn {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.2s;
+}
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+  from { background: rgba(0, 0, 0, 0); }
+  to { background: rgba(0, 0, 0, 0.6); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Home button inside modal */
+.modal-content button {
+  background: #28a745;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #218838; /* darker green */
+  transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <h1>F1 Quiz 🏎️</h1>
+    <form name="quizForm">
+
+        <!-- Q1 -->
+        <div class="question">
+            <p>1. Which team is nicknamed "The Prancing Horse"?</p>
+            <label><input type="radio" name="q1" value="McLaren"> McLaren</label>
+            <label><input type="radio" name="q1" value="Red Bull"> Red Bull</label>
+            <label><input type="radio" name="q1" value="Mercedes"> Mercedes</label>
+            <label><input type="radio" name="q1" value="Ferrari"> Ferrari</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+            <p>2. Who won the 2021 F1 World Championship?</p>
+            <label><input type="radio" name="q2" value="Lewis Hamilton"> Lewis Hamilton</label>
+            <label><input type="radio" name="q2" value="Charles Leclerc"> Charles Leclerc</label>
+            <label><input type="radio" name="q2" value="Max Verstappen"> Max Verstappen</label>
+            <label><input type="radio" name="q2" value="Valtteri Bottas"> Valtteri Bottas</label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+            <p>3. Which circuit hosts the Monaco Grand Prix?</p>
+            <label><input type="radio" name="q3" value="Spa-Francorchamps"> Spa-Francorchamps</label>
+            <label><input type="radio" name="q3" value="Monaco"> Monaco</label>
+            <label><input type="radio" name="q3" value="Silverstone"> Silverstone</label>
+            <label><input type="radio" name="q3" value="Suzuka"> Suzuka</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question">
+            <p>4. How many World Championships has Michael Schumacher won?</p>
+            <label><input type="radio" name="q4" value="6"> 6</label>
+            <label><input type="radio" name="q4" value="8"> 8</label>
+            <label><input type="radio" name="q4" value="5"> 5</label>
+            <label><input type="radio" name="q4" value="7"> 7</label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question">
+            <p>5. Which team does Lewis Hamilton drive for in 2023?</p>
+            <label><input type="radio" name="q5" value="Red Bull"> Red Bull</label>
+            <label><input type="radio" name="q5" value="Mercedes"> Mercedes</label>
+            <label><input type="radio" name="q5" value="McLaren"> McLaren</label>
+            <label><input type="radio" name="q5" value="Ferrari"> Ferrari</label>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question">
+            <p>6. Which country hosts the Imola circuit?</p>
+            <label><input type="radio" name="q6" value="Italy"> Italy</label>
+            <label><input type="radio" name="q6" value="Monaco"> Monaco</label>
+            <label><input type="radio" name="q6" value="Spain"> Spain</label>
+            <label><input type="radio" name="q6" value="Germany"> Germany</label>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+            <p>7. Who holds the all-time wins record in F1?</p>
+            <label><input type="radio" name="q7" value="Sebastian Vettel"> Sebastian Vettel</label>
+            <label><input type="radio" name="q7" value="Michael Schumacher"> Michael Schumacher</label>
+            <label><input type="radio" name="q7" value="Max Verstappen"> Max Verstappen</label>
+            <label><input type="radio" name="q7" value="Lewis Hamilton"> Lewis Hamilton</label>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question">
+            <p>8. What color is the Red Bull car’s front wing endplate traditionally?</p>
+            <label><input type="radio" name="q8" value="Red"> Red</label>
+            <label><input type="radio" name="q8" value="Blue"> Blue</label>
+            <label><input type="radio" name="q8" value="Yellow"> Yellow</label>
+            <label><input type="radio" name="q8" value="Black"> Black</label>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question">
+            <p>9. Who won the first ever F1 World Championship?</p>
+            <label><input type="radio" name="q9" value="Alberto Ascari"> Alberto Ascari</label>
+            <label><input type="radio" name="q9" value="Lewis Hamilton"> Lewis Hamilton</label>
+            <label><input type="radio" name="q9" value="Giuseppe Farina"> Giuseppe Farina</label>
+            <label><input type="radio" name="q9" value="Juan Manuel Fangio"> Juan Manuel Fangio</label>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question">
+            <p>10. Which team does Charles Leclerc race for?</p>
+            <label><input type="radio" name="q10" value="Red Bull"> Red Bull</label>
+            <label><input type="radio" name="q10" value="Mercedes"> Mercedes</label>
+            <label><input type="radio" name="q10" value="McLaren"> McLaren</label>
+            <label><input type="radio" name="q10" value="Ferrari"> Ferrari</label>
+        </div>
+
+        <!-- Q11 -->
+        <div class="question">
+            <p>11. Which circuit is famous for Eau Rouge?</p>
+            <label><input type="radio" name="q11" value="Monaco"> Monaco</label>
+            <label><input type="radio" name="q11" value="Spa-Francorchamps"> Spa-Francorchamps</label>
+            <label><input type="radio" name="q11" value="Silverstone"> Silverstone</label>
+            <label><input type="radio" name="q11" value="Imola"> Imola</label>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question">
+            <p>12. Who is known as the “Iceman” in F1?</p>
+            <label><input type="radio" name="q12" value="Kimi Räikkönen"> Kimi Räikkönen</label>
+            <label><input type="radio" name="q12" value="Fernando Alonso"> Fernando Alonso</label>
+            <label><input type="radio" name="q12" value="Sebastian Vettel"> Sebastian Vettel</label>
+            <label><input type="radio" name="q12" value="Valtteri Bottas"> Valtteri Bottas</label>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question">
+            <p>13. Which driver famously joined Ferrari in 2015?</p>
+            <label><input type="radio" name="q13" value="Sebastian Vettel"> Sebastian Vettel</label>
+            <label><input type="radio" name="q13" value="Kimi Räikkönen"> Kimi Räikkönen</label>
+            <label><input type="radio" name="q13" value="Charles Leclerc"> Charles Leclerc</label>
+            <label><input type="radio" name="q13" value="Fernando Alonso"> Fernando Alonso</label>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question">
+            <p>14. Which country hosts the Suzuka Grand Prix?</p>
+            <label><input type="radio" name="q14" value="Japan"> Japan</label>
+            <label><input type="radio" name="q14" value="Italy"> Italy</label>
+            <label><input type="radio" name="q14" value="Spain"> Spain</label>
+            <label><input type="radio" name="q14" value="France"> France</label>
+        </div>
+
+        <!-- Q15 -->
+        <div class="question">
+            <p>15. Which driver won the 2022 Abu Dhabi GP?</p>
+            <label><input type="radio" name="q15" value="Max Verstappen"> Max Verstappen</label>
+            <label><input type="radio" name="q15" value="Lewis Hamilton"> Lewis Hamilton</label>
+            <label><input type="radio" name="q15" value="Valtteri Bottas"> Valtteri Bottas</label>
+            <label><input type="radio" name="q15" value="Charles Leclerc"> Charles Leclerc</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Your Result 🎉</h2>
+            <p id="scoreText"></p>
+            <p id="complimentText"></p>
+            <button onclick="window.location.href='index.html'">🏠 Go Back Home</button>
+        </div>
+    </div>
+
+    <script>
+        const quizType = "f1";
+    </script>
+    <script src="js/quiz.js"></script>
+</body>

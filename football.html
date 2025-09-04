@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Football Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, white, blue, red);
+            color: #000000;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .question {
+            background-color: rgba(0,0,0,0.5);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .question p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            color: #000;
+            font-weight: bold;
+        }
+        /* ==== Modal Styling ==== */
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 98%;
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: #eae9e9;
+  margin: auto;
+  padding: 20px;
+  border-radius: 14px;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+  animation: slideUp 0.4s ease-out;
+  position: relative;
+  border-top: 6px solid #28a745; /* 🏏 Cricket green stripe */
+}
+
+
+/* Close button */
+.close-btn {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #444;
+  transition: color 0.2s;
+}
+.close-btn:hover {
+  color: #e74c3c;
+}
+
+/* Modal animations */
+@keyframes fadeIn {
+  from { background: rgba(0, 0, 0, 0); }
+  to { background: rgba(0, 0, 0, 0.6); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Home button inside modal */
+.modal-content button {
+  background: #28a745;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #218838; /* darker green */
+  transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <h1>Football Quiz ⚽</h1>
+    <form name="quizForm">
+
+        <!-- Q1 -->
+        <div class="question">
+            <p>1. Which Real Madrid player is nicknamed “Fede”?</p>
+            <label><input type="radio" name="q1" value="Fede Valverde"> Fede Valverde</label>
+            <label><input type="radio" name="q1" value="Toni Kroos"> Toni Kroos</label>
+            <label><input type="radio" name="q1" value="Luka Modric"> Luka Modrić</label>
+            <label><input type="radio" name="q1" value="Marco Asensio"> Marco Asensio</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+            <p>2. How many Champions League titles has Real Madrid won (as of 2023)?</p>
+            <label><input type="radio" name="q2" value="14"> 14</label>
+            <label><input type="radio" name="q2" value="12"> 12</label>
+            <label><input type="radio" name="q2" value="10"> 10</label>
+            <label><input type="radio" name="q2" value="16"> 16</label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+            <p>3. Cristiano Ronaldo started his senior international career with which country?</p>
+            <label><input type="radio" name="q3" value="Portugal"> Portugal</label>
+            <label><input type="radio" name="q3" value="Spain"> Spain</label>
+            <label><input type="radio" name="q3" value="Italy"> Italy</label>
+            <label><input type="radio" name="q3" value="France"> France</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question">
+            <p>4. Which Brazilian footballer played for Real Madrid from 2003 to 2009?</p>
+            <label><input type="radio" name="q4" value="Kaká"> Kaká</label>
+            <label><input type="radio" name="q4" value="Robinho"> Robinho</label>
+            <label><input type="radio" name="q4" value="Ronaldo Nazário"> Ronaldo Nazário</label>
+            <label><input type="radio" name="q4" value="Neymar"> Neymar</label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question">
+            <p>5. Who scored the winning goal in the 2018 UEFA Champions League final for Real Madrid?</p>
+            <label><input type="radio" name="q5" value="Gareth Bale"> Gareth Bale</label>
+            <label><input type="radio" name="q5" value="Karim Benzema"> Karim Benzema</label>
+            <label><input type="radio" name="q5" value="Cristiano Ronaldo"> Cristiano Ronaldo</label>
+            <label><input type="radio" name="q5" value="Sergio Ramos"> Sergio Ramos</label>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question">
+            <p>6. Which country won the 2014 FIFA World Cup?</p>
+            <label><input type="radio" name="q6" value="Germany"> Germany</label>
+            <label><input type="radio" name="q6" value="Brazil"> Brazil</label>
+            <label><input type="radio" name="q6" value="Argentina"> Argentina</label>
+            <label><input type="radio" name="q6" value="France"> France</label>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+            <p>7. Who is Real Madrid’s all-time top scorer?</p>
+            <label><input type="radio" name="q7" value="Cristiano Ronaldo"> Cristiano Ronaldo</label>
+            <label><input type="radio" name="q7" value="Raúl"> Raúl</label>
+            <label><input type="radio" name="q7" value="Karim Benzema"> Karim Benzema</label>
+            <label><input type="radio" name="q7" value="Ferenc Puskás"> Ferenc Puskás</label>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question">
+            <p>8. Which French player scored for Real Madrid in the 2022–23 season?</p>
+            <label><input type="radio" name="q8" value="Karim Benzema"> Karim Benzema</label>
+            <label><input type="radio" name="q8" value="Zinedine Zidane"> Zinedine Zidane</label>
+            <label><input type="radio" name="q8" value="Paul Pogba"> Paul Pogba</label>
+            <label><input type="radio" name="q8" value="N’Golo Kanté"> N’Golo Kanté</label>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question">
+            <p>9. Cristiano Ronaldo played for which English club before joining Real Madrid?</p>
+            <label><input type="radio" name="q9" value="Manchester United"> Manchester United</label>
+            <label><input type="radio" name="q9" value="Liverpool"> Liverpool</label>
+            <label><input type="radio" name="q9" value="Chelsea"> Chelsea</label>
+            <label><input type="radio" name="q9" value="Arsenal"> Arsenal</label>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question">
+            <p>10. Which German footballer played for Real Madrid from 2006 to 2010?</p>
+            <label><input type="radio" name="q10" value="Sami Khedira"> Sami Khedira</label>
+            <label><input type="radio" name="q10" value="Mesut Özil"> Mesut Özil</label>
+            <label><input type="radio" name="q10" value="Lothar Matthäus"> Lothar Matthäus</label>
+            <label><input type="radio" name="q10" value="Miroslav Klose"> Miroslav Klose</label>
+        </div>
+
+        <!-- Q11 -->
+        <div class="question">
+            <p>11. Which club did Cristiano Ronaldo join after leaving Real Madrid?</p>
+            <label><input type="radio" name="q11" value="Juventus"> Juventus</label>
+            <label><input type="radio" name="q11" value="Manchester United"> Manchester United</label>
+            <label><input type="radio" name="q11" value="PSG"> PSG</label>
+            <label><input type="radio" name="q11" value="Inter Milan"> Inter Milan</label>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question">
+            <p>12. Which Brazilian won the FIFA Ballon d'Or while playing for Real Madrid?</p>
+            <label><input type="radio" name="q12" value="Kaká"> Kaká</label>
+            <label><input type="radio" name="q12" value="Ronaldo Nazário"> Ronaldo Nazário</label>
+            <label><input type="radio" name="q12" value="Robinho"> Robinho</label>
+            <label><input type="radio" name="q12" value="Neymar"> Neymar</label>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question">
+            <p>13. Who scored the most goals in the 2017–18 UEFA Champions League season?</p>
+            <label><input type="radio" name="q13" value="Cristiano Ronaldo"> Cristiano Ronaldo</label>
+            <label><input type="radio" name="q13" value="Karim Benzema"> Karim Benzema</label>
+            <label><input type="radio" name="q13" value="Gareth Bale"> Gareth Bale</label>
+            <label><input type="radio" name="q13" value="Luka Modric"> Luka Modric</label>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question">
+            <p>14. Which French World Cup winner played for Real Madrid and PSG?</p>
+            <label><input type="radio" name="q14" value="Kylian Mbappé"> Kylian Mbappé</label>
+            <label><input type="radio" name="q14" value="Karim Benzema"> Karim Benzema</label>
+            <label><input type="radio" name="q14" value="Paul Pogba"> Paul Pogba</label>
+            <label><input type="radio" name="q14" value="Zinedine Zidane"> Zinedine Zidane</label>
+        </div>
+
+        <!-- Q15 -->
+        <div class="question">
+            <p>15. Which Real Madrid player is known as “The Atomic Flea”?</p>
+            <label><input type="radio" name="q15" value="Eden Hazard"> Eden Hazard</label>
+            <label><input type="radio" name="q15" value="Vinícius Jr."> Vinícius Jr.</label>
+            <label><input type="radio" name="q15" value="Marco Asensio"> Marco Asensio</label>
+            <label><input type="radio" name="q15" value="Rodrygo"> Rodrygo</label>
+        </div>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Your Result 🎉</h2>
+            <p id="scoreText"></p>
+            <p id="complimentText"></p>
+            <button onclick="window.location.href='index.html'">🏠 Go Back Home</button>
+        </div>
+    </div>
+
+    <script>
+        const quizType = "football";
+    </script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
