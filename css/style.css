@@ -1,10 +1,9 @@
-/* RESET */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
@@ -15,27 +14,22 @@ body {
   text-align: center;
 }
 
-/* Default gradient for INDEX page */
 body.index-page {
   background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
 }
-
-/* Animate gradient */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Container */
 .container {
   max-width: 1000px;
   padding: 40px 20px;
 }
 
-/* Title */
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
@@ -48,15 +42,12 @@ h1 {
   font-weight: 400;
   color: #f0f0f0;
 }
-
-/* Grid layout for sport cards */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-/* Sport cards */
 .card {
   background: rgba(0,0,0,0.4);
   padding: 30px 20px;
