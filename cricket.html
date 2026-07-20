@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,33 +11,27 @@
             color: #000000;
             padding: 20px;
         }
-
         h1 {
             text-align: center;
             margin-bottom: 30px;
         }
-
         .question {
             background-color: rgba(0,0,0,0.5);
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 10px;
         }
-
         .question p {
             font-weight: bold;
             font-size: 18px;
         }
-
         label {
             display: block;
             margin: 5px 0;
         }
-
         input[type="radio"] {
             margin-right: 10px;
         }
-
         button {
             display: block;
             margin: 20px auto;
@@ -50,8 +43,7 @@
             background-color: #fff;
             color: #000;
             font-weight: bold;
-        }
-        
+        }        
 .modal {
   display: none; 
   position: fixed;
@@ -63,7 +55,6 @@
   background: rgba(0, 0, 0, 0.6); 
   animation: fadeIn 0.3s ease-in-out;
 }
-
 .modal-content {
   background: #eae9e9;
   margin: auto;
@@ -76,9 +67,7 @@
   position: relative;
   border-top: 6px solid #28a745;
 }
-
-
-/* Close button */
+/* close button */
 .close-btn {
   float: right;
   font-size: 28px;
@@ -100,8 +89,7 @@
   from { transform: translateY(50px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
-/* Home button inside modal */
+/* Home button */
 .modal-content button {
   background: #28a745;
   color: #fff;
@@ -112,19 +100,16 @@
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 .modal-content button:hover {
   background: #218838; 
   transform: scale(1.05);
 }
     </style>
 </head>
-
 <body class="cricket-page">
     <div class="container">
         <h1>Cricket Fan Quiz 🏏</h1>
         <form id="quizForm">
-            <!-- Q1 -->
             <div class="question">
                 <p>1. Who scored the first ever double hundred in ODIs?</p>
                 <label><input type="radio" name="q1" value="Rohit Sharma"> Rohit Sharma</label>
@@ -132,8 +117,6 @@
                 <label><input type="radio" name="q1" value="Virender Sehwag"> Virender Sehwag</label>
                 <label><input type="radio" name="q1" value="Sachin Tendulkar"> Sachin Tendulkar</label>
             </div>
-
-            <!-- Q2 -->
             <div class="question">
                 <p>2. Who hit six sixes in an over in 2007 T20 World Cup?</p>
                 <label><input type="radio" name="q2" value="AB de Villiers"> AB de Villiers</label>
@@ -141,8 +124,6 @@
                 <label><input type="radio" name="q2" value="MS Dhoni"> MS Dhoni</label>
                 <label><input type="radio" name="q2" value="Chris Gayle"> Chris Gayle</label>
             </div>
-
-            <!-- Q3 -->
             <div class="question">
                 <p>3. Who is nicknamed “Chikoo” in Indian cricket?</p>
                 <label><input type="radio" name="q3" value="Virat Kohli"> Virat Kohli</label>
@@ -150,8 +131,6 @@
                 <label><input type="radio" name="q3" value="Rishabh Pant"> Rishabh Pant</label>
                 <label><input type="radio" name="q3" value="Rohit Sharma"> Rohit Sharma</label>
             </div>
-
-            <!-- Q4 -->
             <div class="question">
                 <p>4. Who won the 2023 ICC World Test Championship Final?</p>
                 <label><input type="radio" name="q4" value="England"> England</label>
@@ -159,8 +138,6 @@
                 <label><input type="radio" name="q4" value="Australia"> Australia</label>
                 <label><input type="radio" name="q4" value="India"> India</label>
             </div>
-
-            <!-- Q5 -->
             <div class="question">
                 <p>5. Who captained RCB in IPL 2019?</p>
                 <label><input type="radio" name="q5" value="Kane Williamson"> Kane Williamson</label>
@@ -168,8 +145,6 @@
                 <label><input type="radio" name="q5" value="Virat Kohli"> Virat Kohli</label>
                 <label><input type="radio" name="q5" value="AB de Villiers"> AB de Villiers</label>
             </div>
-
-            <!-- Q6 -->
             <div class="question">
                 <p>6. Who is the only Indian batsman to score four double centuries in consecutive Test series?</p>
                 <label><input type="radio" name="q6" value="Virender Sehwag"> Virender Sehwag</label>
@@ -177,8 +152,6 @@
                 <label><input type="radio" name="q6" value="Sachin Tendulkar"> Sachin Tendulkar</label>
                 <label><input type="radio" name="q6" value="Rahul Dravid"> Rahul Dravid</label>
             </div>
-
-            <!-- Q7 -->
             <div class="question">
                 <p>7. Who won the 2011 ICC World Cup?</p>
                 <label><input type="radio" name="q7" value="Sri Lanka"> Sri Lanka</label>
@@ -186,8 +159,6 @@
                 <label><input type="radio" name="q7" value="India"> India</label>
                 <label><input type="radio" name="q7" value="Australia"> Australia</label>
             </div>
-
-            <!-- Q8 -->
             <div class="question">
                 <p>8. Who is the most successful Indian Test captain with 40 wins?</p>
                 <label><input type="radio" name="q8" value="MS Dhoni"> MS Dhoni</label>
@@ -195,8 +166,6 @@
                 <label><input type="radio" name="q8" value="Rahul Dravid"> Rahul Dravid</label>
                 <label><input type="radio" name="q8" value="Sourav Ganguly"> Sourav Ganguly</label>
             </div>
-
-            <!-- Q9 -->
             <div class="question">
                 <p>9. Which Australian player is nicknamed “Mr. Cricket”?</p>
                 <label><input type="radio" name="q9" value="Steve Waugh"> Steve Waugh</label>
@@ -204,8 +173,6 @@
                 <label><input type="radio" name="q9" value="Ricky Ponting"> Ricky Ponting</label>
                 <label><input type="radio" name="q9" value="Michael Hussey"> Michael Hussey</label>
             </div>
-
-            <!-- Q10 -->
             <div class="question">
                 <p>10. Who has taken the most Test wickets?</p>
                 <label><input type="radio" name="q10" value="Anil Kumble"> Anil Kumble</label>
@@ -213,8 +180,6 @@
                 <label><input type="radio" name="q10" value="Shane Warne"> Shane Warne</label>
                 <label><input type="radio" name="q10" value="Muttiah Muralitharan"> Muttiah Muralitharan</label>
             </div>
-
-            <!-- Q11 -->
             <div class="question">
                 <p>11. Who broke Sachin Tendulkar’s record for the most ODI centuries?</p>
                 <label><input type="radio" name="q11" value="Steve Smith"> Steve Smith</label>
@@ -222,8 +187,6 @@
                 <label><input type="radio" name="q11" value="Virat Kohli"> Virat Kohli</label>
                 <label><input type="radio" name="q11" value="Babar Azam"> Babar Azam</label>
             </div>
-
-            <!-- Q12 -->
             <div class="question">
                 <p>12. Which player has scored 100 international centuries?</p>
                 <label><input type="radio" name="q12" value="Virat Kohli"> Virat Kohli</label>
@@ -231,8 +194,6 @@
                 <label><input type="radio" name="q12" value="Brian Lara"> Brian Lara</label>
                 <label><input type="radio" name="q12" value="Ricky Ponting"> Ricky Ponting</label>
             </div>
-
-            <!-- Q13 -->
             <div class="question">
                 <p>13. Who captained India in the 2003 World Cup?</p>
                 <label><input type="radio" name="q13" value="MS Dhoni"> MS Dhoni</label>
@@ -240,8 +201,6 @@
                 <label><input type="radio" name="q13" value="Anil Kumble"> Anil Kumble</label>
                 <label><input type="radio" name="q13" value="Rahul Dravid"> Rahul Dravid</label>
             </div>
-
-            <!-- Q14 -->
             <div class="question">
                 <p>14. Who won the 2019 IPL Orange Cap?</p>
                 <label><input type="radio" name="q14" value="Shikhar Dhawan"> Shikhar Dhawan</label>
@@ -249,8 +208,6 @@
                 <label><input type="radio" name="q14" value="Andre Russell"> Andre Russell</label>
                 <label><input type="radio" name="q14" value="KL Rahul"> KL Rahul</label>
             </div>
-
-            <!-- Q15 -->
             <div class="question">
                 <p>15. Who won the 2011 ICC World Cup?</p>
                 <label><input type="radio" name="q15" value="India"> India</label>
@@ -258,11 +215,8 @@
                 <label><input type="radio" name="q15" value="Pakistan"> Pakistan</label>
                 <label><input type="radio" name="q15" value="Sri Lanka"> Sri Lanka</label>
             </div>
-
             <button type="button" onclick="checkAnswers()">Submit Quiz</button>
         </form>
-
-        <!-- Result Modal -->
         <div id="resultModal" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -277,5 +231,4 @@
         </script>
         <script src="js/quiz.js"></script>
 </body>
-
 </html>
